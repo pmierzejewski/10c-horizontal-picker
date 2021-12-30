@@ -1,0 +1,11 @@
+node_modules/
+
+
+example/.expo/
+example/.vscode/
+example/node_modules/
+
+
+
+# macOS
+.DS_Store
