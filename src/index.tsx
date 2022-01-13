@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Pressable, FlatList } from "react-native";
 
+export const foo = (name: string): string => {
+  return "bar";
+};
+
 export type Member = {
   name: string;
   age: number;
@@ -10,18 +14,6 @@ export interface Item<T> {
   id: string;
   item: T;
 }
-
-// npm library*
-// - docs*
-// - gif*
-// - uniwersalnosc / opinionated*
-// - mały rozmiar*
-// - nowe techniki*
-// - kompatybilność - babel, typescipt // build -> tsc*
-// - linter*
-// - testy*
-// - example project for local development*
-//
 
 interface Props<T> {
   data: Array<Item<T>>;
@@ -33,8 +25,6 @@ interface Props<T> {
     isSelected: boolean;
   }) => JSX.Element;
   onSelect: (item: Item<T>) => void;
-  //   initialItem?: Item;
-  //   isMultiSelect?: boolean;
 }
 
 const HorizontalPicker = <T,>({ data, renderItem, onSelect }: Props<T>) => {
@@ -42,23 +32,7 @@ const HorizontalPicker = <T,>({ data, renderItem, onSelect }: Props<T>) => {
 
   const onItemPress = (item: Item<T>) => {
     onSelect(item);
-    // const isSelected = selectedItems.find(elem => elem.id )
     setSelectedItems([item]);
-    // if (false) {
-    //   const foundSelectedIndex = selectedItems.findIndex((selected) => {
-    //     return selected.item === item.item;
-    //   });
-    //   let newSelected = [...selectedItems];
-    //   if (foundSelectedIndex !== -1) {
-    //     newSelected.splice(foundSelectedIndex, 1);
-    //     setSelectedItems(newSelected);
-    //   } else {
-    //     newSelected.push(item);
-    //     setSelectedItems(newSelected);
-    //   }
-    // } else {
-    //   setSelectedItems([item]);
-    // }
   };
 
   const pressableRenderItem = ({ item }: { item: Item<T> }) => {

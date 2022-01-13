@@ -1,16 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  View,
-  ListRenderItem,
-} from "react-native";
-
-import HorizontalPicker, { Member, Item } from "10c-horizontal-picker";
-
-const VALUES: Item<Member>[] = [
+import { StyleSheet, Text, SafeAreaView, View } from "react-native";
+import { foo, HorizontalPicker } from "10c-horizontal-picker";
+const VALUES = [
   { item: { name: "Avaluevalue", age: 1 }, id: "1" },
   { item: { name: "Bvaluevalue", age: 2 }, id: "2" },
   { item: { name: "Cvaluevalue", age: 3 }, id: "3" },
@@ -19,16 +11,7 @@ const VALUES: Item<Member>[] = [
   { item: { name: "Fvaluevalue", age: 6 }, id: "6" },
   { item: { name: "Gvaluevalue", age: 7 }, id: "7" },
 ];
-
-interface renderItemAuxProps {
-  item: Item<Member>;
-  isSelected: boolean;
-}
-
-const renderItemAux = ({
-  item,
-  isSelected,
-}: renderItemAuxProps): JSX.Element => {
+const renderItemAux = ({ item, isSelected }) => {
   const {
     id,
     item: { name, age },
@@ -40,8 +23,8 @@ const renderItemAux = ({
     </View>
   );
 };
-
 export default function App() {
+  console.log("importowana funkcja", foo());
   return (
     <SafeAreaView style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
@@ -54,7 +37,6 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

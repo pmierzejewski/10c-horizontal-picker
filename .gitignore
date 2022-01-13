@@ -1,11 +1,14 @@
 node_modules/
 
 
+# example project
 example/.expo/
 example/.vscode/
 example/node_modules/
+example/yarn-error.log
 
-
+#  compiled library files
+lib
 
 # macOS
 .DS_Store

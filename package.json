@@ -1,0 +1,22 @@
+{
+  "name": "10c-horizontal-picker",
+  "version": "0.0.3",
+  "description": "Best picker",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "10C",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "private": false,
+  "peerDependencies": {
+    "react": "17.0.1",
+    "react-native": "0.64.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-native": "^0.66.10",
+    "typescript": "^4.5.4"
+  }
+}
