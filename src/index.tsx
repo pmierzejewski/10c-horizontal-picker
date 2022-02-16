@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { Pressable, FlatList } from "react-native";
 
-export const foo = (name: string): string => {
-  return "bar";
-};
-
 export type Member = {
   name: string;
   age: number;
@@ -28,6 +24,10 @@ interface Props<T> {
 }
 
 const HorizontalPicker = <T,>({ data, renderItem, onSelect }: Props<T>) => {
+  if (!renderItem) {
+    throw new Error("renderItem method not passed!");
+  }
+
   const [selectedItems, setSelectedItems] = useState<Item<T>[]>([]);
 
   const onItemPress = (item: Item<T>) => {
@@ -50,6 +50,7 @@ const HorizontalPicker = <T,>({ data, renderItem, onSelect }: Props<T>) => {
       renderItem={pressableRenderItem}
       data={data}
       horizontal
+      testID="pickerList"
     />
   );
 };
